@@ -17,48 +17,51 @@ The instructors that have conceived this assignment have already partitioned the
 The training data set contains of 19622 observations containing 160 different variables. The testing data set contains of only 20 observations.
 
 Of the 160 columns, only a small portion (27) are actual readings from 9 different sensors:
-# roll_belt
-# pitch_belt
-# yaw_belt
-# gyros_belt_x
-# gyros_belt_y
-# gyros_belt_z
-# accel_belt_x
-# accel_belt_y
-# accel_belt_z
-# magnet_belt_x
-# magnet_belt_y
-# magnet_belt_z
-# roll_arm
-# pitch_arm
-# yaw_arm
-# gyros_arm_x
-# gyros_arm_y
-# gyros_arm_z
-# accel_arm_x
-# accel_arm_y
-# accel_arm_z
-# magnet_arm_x
-# magnet_arm_y
-# magnet_arm_z
-# roll_dumbbell
-# pitch_dumbbell
-# yaw_dumbbell
+
+* roll_belt
+* pitch_belt
+* yaw_belt
+* gyros_belt_x
+* gyros_belt_y
+* gyros_belt_z
+* accel_belt_x
+* accel_belt_y
+* accel_belt_z
+* magnet_belt_x
+* magnet_belt_y
+* magnet_belt_z
+* roll_arm
+* pitch_arm
+* yaw_arm
+* gyros_arm_x
+* gyros_arm_y
+* gyros_arm_z
+* accel_arm_x
+* accel_arm_y
+* accel_arm_z
+* magnet_arm_x
+* magnet_arm_y
+* magnet_arm_z
+* roll_dumbbell
+* pitch_dumbbell
+* yaw_dumbbell
 
 Most of the other columns are statistical parameters derived from these 27 columns:
+
 * minimum
 * maximum
 * skewness
 * kurtosis
 * amplitude
 
-Now, biceps curls (like pretty much any other physical activity) is inherently dynamic, thus one expects to recognize the quality of the activity by following the sensor readings to over a period of time. To do so, the data set contains the following set of columns:
-# user_name
-# raw_timestamp_part_1
-# raw_timestamp_part_2
-# cvtd_timestamp
-# new_window
-# num_window
+Now, biceps curls (like pretty much any other physical activity) are inherently a dynamic process, thus one expects to recognize the quality of the activity by following the sensor readings to over a period of time. To do so, the data set contains the following set of columns:
+
+* user_name
+* raw_timestamp_part_1
+* raw_timestamp_part_2
+* cvtd_timestamp
+* new_window
+* num_window
 
 Former three of these columns allow putting a time series together, while the latter three are derived from the former.
 
@@ -81,28 +84,11 @@ Considering that the available training data was very large, and my available ha
 
 I then increased the percentage of data used for training to 30%, which caused training to take significantly more time, with only marginal improvement in (already very good) accuracy, as shown in the table below: 
 
-<table>
-  <th>
-    <td>Training Data Size</td>
-    <td>10%</td>
-    <td>30%</td>
-  </th>
-  <tr>
-    <td>Random Forest</td>
-    <td>0.9946</td>
-    <td>0.9973</td>
-  </tr>
-  <tr>
-    <td>Boosting</td>
-    <td>0.9931</td>
-    <td>0.9937</td>
-  </tr>
-  <tr>
-    <td>LDA</td>
-    <td>0.2844</td>
-    <td>0.2844</td>
-  </tr>
-</table>
+|Training Data Size|  10% | 30%  |
+|------------------|-----:|-----:|
+|Random Forest     |0.9946|0.9973|
+|Boosting          |0.9931|0.9937|
+|LDA               |0.2844|0.2844|
 
 As a matter of fact, actual test data predictions were the same by the RF and Bosting models, regardless whether trained on 10% or 30% of the data.
 
