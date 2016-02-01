@@ -51,6 +51,9 @@ ldaConfusionMatrix = confusionMatrix(ldaValidationPrediction, validationData$cla
 #lasso: Error: wrong model type for classification
 #lassoModel = train(classe ~ user_name + raw_timestamp_part_1 + raw_timestamp_part_2, trainingData, method="lasso")
 
-# Final test prediction by the winning model:
+# Final test predictions:
 rfTestPrediction = predict(rfModel, newdata = testingData)
 gbmTestPrediction = predict(gbmModel, newdata = testingData)
+rpartTestPrediction = predict(rpartModel, newdata = testingData)
+ldaTestPrediction = predict(ldaModel, newdata = testingData)
+svmTestPrediction = predict(svmModel, newdata = testingData)

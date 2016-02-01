@@ -158,19 +158,24 @@ img {
 <td align="right">0.9937</td>
 </tr>
 <tr class="odd">
+<td align="left">Classification Tree</td>
+<td align="right">0.9431</td>
+<td align="right">0.9915</td>
+</tr>
+<tr class="even">
 <td align="left">LDA</td>
 <td align="right">0.2844</td>
 <td align="right">0.2844</td>
 </tr>
 </tbody>
 </table>
-<p>As a matter of fact, actual test data predictions were the same by the RF and Bosting models, regardless whether trained on 10% or 30% of the data.</p>
+<p>As a matter of fact, actual test data predictions were the same by the RF, Bosting and Classification Tree models when trained on 30% of the available data. When trained only on 10%, RF and Boosting still gave the same result as when trained on 30% of the data, while Classification Tree’s prediction differred for only 2 out of 20 test rows (in both cases predicting class C instead of B).</p>
 </div>
 <div id="conclusion" class="section level3">
 <h3>Conclusion</h3>
-<p>obviously, the choice of predictors to use for the classification is very specific to this particular assignment - the resulting model would be utterly useless in classifying any set of biceps curl data other than the one it was trained on. But, the choice of test data for the assignment pretty much forced such solution on me.</p>
+<p>Obviously, the choice of predictors used for the classification is very specific to this particular assignment - the resulting model would be utterly useless in classifying any set of biceps curl data other than the one it was trained on. But, the choice of test data for the assignment pretty much forced such solution on me.</p>
 <p>If the chosen test data had more temporal features, devising a model that can be used outside of training would have been more feasible.</p>
-<p>The key takeway from this assignment is that data collected must be adequate to answer the fundamental question that the learning process is supposed to answer. And the method and algorithm always follow the data.</p>
+<p>The key takeway from this assignment is that collected data must be adequate to answer the fundamental question that the learning process is supposed to answer. The learning method and the choice of algorithm(s) always follow the data.</p>
 </div>
 </div>
 

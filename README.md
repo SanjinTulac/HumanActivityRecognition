@@ -84,18 +84,19 @@ Considering that the available training data was very large, and my available ha
 
 I then increased the percentage of data used for training to 30%, which caused training to take significantly more time, with only marginal improvement in (already very good) accuracy, as shown in the table below: 
 
-|Training Data Size|  10% | 30%  |
-|------------------|-----:|-----:|
-|Random Forest     |0.9946|0.9973|
-|Boosting          |0.9931|0.9937|
-|LDA               |0.2844|0.2844|
+|Training Data Size |  10% | 30%  |
+|-------------------|-----:|-----:|
+|Random Forest      |0.9946|0.9973|
+|Boosting           |0.9931|0.9937|
+|Classification Tree|0.9431|0.9915|
+|LDA                |0.2844|0.2844|
 
-As a matter of fact, actual test data predictions were the same by the RF and Bosting models, regardless whether trained on 10% or 30% of the data.
+As a matter of fact, actual test data predictions were the same by the RF, Bosting and Classification Tree models when trained on 30% of the available data. When trained only on 10%, RF and Boosting still gave the same result as when trained on 30% of the data, while Classification Tree's prediction differred for only 2 out of 20 test rows (in both cases predicting class C instead of B).
 
 ### Conclusion
 
-obviously, the choice of predictors to use for the classification is very specific to this particular assignment - the resulting model would be utterly useless in classifying any set of biceps curl data other than the one it was trained on. But, the choice of test data for the assignment pretty much forced such solution on me.
+Obviously, the choice of predictors used for the classification is very specific to this particular assignment - the resulting model would be utterly useless in classifying any set of biceps curl data other than the one it was trained on. But, the choice of test data for the assignment pretty much forced such solution on me.
 
 If the chosen test data had more temporal features, devising a model that can be used outside of training would have been more feasible.
 
-The key takeway from this assignment is that data collected must be adequate to answer the fundamental question that the learning process is supposed to answer. And the method and algorithm always follow the data.
+The key takeway from this assignment is that collected data must be adequate to answer the fundamental question that the learning process is supposed to answer. The learning method and the choice of algorithm(s) always follow the data.
